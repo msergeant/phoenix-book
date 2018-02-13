@@ -52,7 +52,7 @@ config :phoenix, :stacktrace_depth, 20
 config :storex, Storex.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "storex_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10
