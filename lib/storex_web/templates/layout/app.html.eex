@@ -13,8 +13,7 @@
   </head>
   <body>
     <nav class="main-nav">
-      <a class="main-nav__
-        logo" href="/"></a>
+      <a class="main-nav__logo" href="/"></a>
     </nav>
     <main class="content">
       <%= if message=get_flash(@conn, :info) do %>
