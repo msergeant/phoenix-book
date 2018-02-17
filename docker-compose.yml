@@ -2,6 +2,8 @@ version: '3.2'
 services:
   db:
     image: postgres
+    volumes:
+      - phoenix-book-postgres:/var/lib/postgresql/data
 
   web:
     build: .
@@ -15,3 +17,8 @@ services:
       - db
     command:
       - ./run.sh
+
+volumes:
+  phoenix-book-postgres:
+    driver: local
+
