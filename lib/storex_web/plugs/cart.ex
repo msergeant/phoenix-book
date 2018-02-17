@@ -23,7 +23,7 @@ defmodule StorexWeb.Plugs.Cart do
   end
 
   def get(conn) do
-    conn.assigns(@assign_name)
+    conn.assigns[@assign_name]
   end
 
   def forget(conn) do

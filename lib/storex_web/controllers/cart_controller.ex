@@ -1,6 +1,7 @@
 defmodule StorexWeb.CartController do
   use StorexWeb, :controller
   alias Storex.Sales
+  alias Storex.Store
   alias StorexWeb.Plugs
 
   def show(conn, _params) do
