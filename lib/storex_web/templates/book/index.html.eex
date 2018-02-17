@@ -1,3 +1,4 @@
+<%= inspect(@conn.assigns) %>
 <section class="book-list">
   <ul class="grid">
     <%= for book <- @books do %>
