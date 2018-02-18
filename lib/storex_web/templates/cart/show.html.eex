@@ -11,7 +11,7 @@
       <h2 class="value-tag__title">quantity</h2>
       <span class="value-tag__content">
         <div class="step minus">
-          <%= link "",
+          <%= link "-",
           to: cart_path(@conn, :delete, book_id: item.book_id), method: :delete %>
         </div>
         <%= item.quantity %>
