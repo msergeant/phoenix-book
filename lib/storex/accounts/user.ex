@@ -8,6 +8,7 @@ defmodule Storex.Accounts.User do
     field :email, :string
     field :full_name, :string
     field :password_hash, :string
+    field :password, :string, virtual: true
 
     timestamps()
   end
@@ -15,7 +16,9 @@ defmodule Storex.Accounts.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:emai, :full_name, :password_hash])
-    |> validate_required([:emai, :full_name, :password_hash])
+    |> cast(attrs, [:email, :full_name, :password])
+    |> validate_required([:email, :full_name, :password])
+    |> validate_length(:password, min: 6)
+    |> unique_constraint(:email)
   end
 end
