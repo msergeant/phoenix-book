@@ -22,6 +22,8 @@ defmodule StorexWeb.Router do
     get "/books/:id", BookController, :show
 
     resources "/carts", CartController, singleton: true, only: [:show, :create, :delete]
+
+    resources "/users", UserController, only: [:new, :create]
   end
 
 
