@@ -11,7 +11,7 @@ defmodule StorexWeb.UserController do
     case Accounts.create_user(user_params) do
       {:ok, user} ->
         conn
-        |> redirect(to: cart_path(conn, :index))
+        |> redirect(to: cart_path(conn, :show))
 
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
