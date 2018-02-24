@@ -26,6 +26,7 @@ defmodule StorexWeb.Router do
 
     resources "/users", UserController, only: [:new, :create]
     resources "/sessions", SessionController, only: [:new, :create], singleton: true
+    resources "/checkout", CheckoutController, only: [:new, :create]
 
     get "/sessions/logout", SessionController, :delete
   end
