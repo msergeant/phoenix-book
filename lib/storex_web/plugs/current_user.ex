@@ -26,4 +26,9 @@ defmodule StorexWeb.Plugs.CurrentUser do
   end
 
   def get(conn), do: conn.assigns[@assign_name]
+
+  def forget(conn) do
+    delete_session(conn, @session_name)
+  end
+
 end

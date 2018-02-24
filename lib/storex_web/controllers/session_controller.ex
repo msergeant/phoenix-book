@@ -21,4 +21,11 @@ defmodule StorexWeb.SessionController do
           |> render("new.html")
       end
   end
+
+  def delete(conn) do
+    conn
+    |> put_flash(:info, "Welcome to Storex")
+    |> CurrentUser.forget()
+    |> redirect(to: book_path(conn, :index))
+  end
 end
