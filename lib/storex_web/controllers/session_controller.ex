@@ -22,9 +22,9 @@ defmodule StorexWeb.SessionController do
       end
   end
 
-  def delete(conn) do
+  def delete(conn, _params) do
     conn
-    |> put_flash(:info, "Welcome to Storex")
+    |> put_flash(:info, "Your are now logged out")
     |> CurrentUser.forget()
     |> redirect(to: book_path(conn, :index))
   end
