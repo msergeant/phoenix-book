@@ -23,9 +23,13 @@ defmodule Storex.Store.Book do
 
   def validate_max_price(changeset) do
     price = get_change(changeset, :price)
-    case Decimal.cmp(price, Decimal.new(99.99)) do
-      :gt -> add_error(changeset, :price, "Price is not valid")
-      _ -> changeset
+    if price do
+      case Decimal.cmp(price, Decimal.new(99.99)) do
+        :gt -> add_error(changeset, :price, "Price is not valid")
+        _ -> changeset
+      end
+    else
+      changeset
     end
   end
 end

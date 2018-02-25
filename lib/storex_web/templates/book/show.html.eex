@@ -1,4 +1,14 @@
 <h1><%= @book.title %></h1>
+
+<%= if @is_admin do %>
+  <%= link "Edit", to: book_path(@conn, :edit, @book), class: "button" %>
+  <%= link "Delete",
+           method: :delete,
+           data: [confirm: "Are you sure?"],
+           to: book_path(@conn, :delete, @book),
+           class: "button button-danger" %>
+<% end %>
+
 <div class="book book-hero">
   <img class="book__image" src="<%= @book.image_url %>">
   <p class="book__description">
